@@ -1,0 +1,26 @@
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  max-height: calc(70vh - 80px);
+}
+.image-gallery {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.om {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .om {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 150px;
+    margin-bottom: 20px;
+    color: white;
+  }
+}

@@ -2,486 +2,290 @@ import React from "react";
 
 // core components
 import {
-    Button, UncontrolledCollapse,
-    Card, CardGroup, CardText, CardImg, CardSubtitle,
-    CardBody,
-    CardFooter,
-    CardTitle,
-    Container, Row, Col
-
+  Button,
+  UncontrolledCollapse,
+  Card,
+  CardGroup,
+  CardText,
+  CardImg,
+  CardSubtitle,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  Container,
+  Row,
+  Col,
 } from "reactstrap";
+import "./team.css";
+
+import Dialog from "@material-ui/core/Dialog";
+import { Link } from "react-router-dom";
+import SWTeam from "../teams/software";
+import BusinessTeam from "../teams/business";
+import ElecTeam from "../teams/electrical";
+import MechaTeam from "../teams/mechanical";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 
 function TeamsSection() {
-    return (
-        <>
-            <div className="section section-dark text-center" style={{ backgroundColor: '#0a63b6' }}>
-                <Container>
+  const [sw, setSW] = React.useState(false);
+  const [mecha, setMecha] = React.useState(false);
+  const [elec, setElec] = React.useState(false);
+  const [bus, setBus] = React.useState(false);
 
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const handleSW = () => {
+    setSW(true);
+  };
 
-                    <Col className="ml-auto mr-auto" >
-                        <h2 className="title" >Teams</h2>
-                    </Col>
+  const handleMecha = () => {
+    setMecha(true);
+  };
 
+  const handleElec = () => {
+    setElec(true);
+  };
 
-                    <Row style={{ padding: 0, margin: 0 }}>
-                        <Col className="ml-auto mr-auto" md="3">
-                            <Card className="card-profile card-plain" style={{ padding: 0, margin: 0 }}>
-                                <div className="">
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <img
-                                            alt="..."
-                                            src={require("assets/img/faces/samer.jpg")}
-                                        />
-                                    </a>
-                                </div>
-                                <CardBody >
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <div className="author" style={{ padding: 0, margin: 0 }}>
-                                            <CardTitle tag="h4">Samer Elda3er</CardTitle>
-                                            <h6 className="card-category">Team Leader</h6>
-                                        </div>
-                                    </a>
-                                    <p className="card-description text-center" style={{ padding: 0, margin: 0 }}>
-                                        "Keep your enemies close and your sub-teams closer".
-                    <br></br>
-It’s funny, because the sub teams are right next to me. I live by my own quotes as you can see.
-                    </p>
-                                </CardBody>
-                                <CardFooter className="text-center" >
+  const handleBus = () => {
+    setBus(true);
+  };
 
-                                    <Button
-                                        className="btn-just-icon btn-neutral ml-1"
-                                        color="link"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                    >
-                                        <i className="fa fa-linkedin" />
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="3">
-                            <Card className="card-profile card-plain" style={{ padding: 0, margin: 0 }}>
-                                <div >
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <img
-                                            alt="..."
-                                            src={require("assets/img/software.jpg")}
-                                        />
-                                    </a>
-                                </div>
-                                <CardBody>
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <div className="author">
-                                            <CardTitle tag="h4">Software Team</CardTitle>
-                                        </div>
-                                    </a>
-                                    <p className="card-description text-center">
-                                        We're responsible for  designing and testing the vehicle software architecture which can be broken down into perception modules, SLAM modules, control modules and vehicle simulations                    </p>
-                                </CardBody>
-                                <CardFooter className="text-center">
+  const handleClose = () => {
+    setSW(false);
+    setMecha(false);
+    setElec(false);
+    setBus(false);
+  };
+  return (
+    <>
+      <div
+        className="section section-dark text-center"
+        style={{ backgroundColor: "#0a63b6" }}
+      >
+        <Container>
+          <Col className="ml-auto mr-auto">
+            <h2 className="title">Teams</h2>
+          </Col>
 
-                                </CardFooter>
-                            </Card >
-                        </Col>
-                        <Col md="3">
-                            <Card className="card-profile card-plain" style={{ padding: 0, margin: 0 }}>
-                                <div >
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <img
-                                            alt="..."
-                                            src={require("assets/img/electrical.jpg")}
-                                        />
-                                    </a>
-                                </div>
-                                <CardBody>
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <div className="author">
-                                            <CardTitle tag="h4">Electrical Team</CardTitle>
-                                        </div>
-                                    </a>
-                                    <p className="card-description text-center">
-                                        We're responsible for electrical & electronics aspects of the vehicle like power management, safety, PCB design, fabrication, wiring and electric kit design
-                    </p>
-                                </CardBody>
-                                <CardFooter className="text-center">
+          <Row style={{ padding: 0, margin: 0 }}>
+            <Col className="ml-auto mr-auto" md="3">
+              <Card
+                className="card-profile card-plain"
+                style={{ padding: 0, margin: 0 }}
+              >
+                <div className="">
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <img
+                      alt="..."
+                      src={require("assets/img/faces/samer.jpg")}
+                    />
+                  </a>
+                </div>
+                <CardBody>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <div className="author" style={{ padding: 0, margin: 0 }}>
+                      <CardTitle tag="h4">Samer Mansour</CardTitle>
+                      <h6 className="card-category">Team Captain</h6>
+                      <h6 className="card-category">
+                        Mechatronics Master Student
+                      </h6>
+                    </div>
+                  </a>
+                  <p
+                    className="card-description text-center"
+                    style={{ padding: 0, margin: 0 }}
+                  >
+                    "If your actions inspire others to dream more, learn more,
+                    do more and become more, you are a leader."
+                    <br></br> -John Quincy Adams
+                  </p>
+                </CardBody>
+                <CardFooter className="text-center">
+                  <Button
+                    className="btn-just-icon btn-neutral ml-1"
+                    color="link"
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                  >
+                    <i className="fa fa-linkedin" />
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col md="3">
+              <Card
+                className="card-profile card-plain"
+                style={{ padding: 0, margin: 0 }}
+              >
+                <div>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <img alt="..." src={require("assets/img/software.jpg")} />
+                  </a>
+                </div>
+                <CardBody>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <div className="author">
+                      <CardTitle tag="h4">Software Team</CardTitle>
+                    </div>
+                  </a>
+                  <p className="card-description text-center">
+                    Responsible for designing and testing the vehicle software
+                    architecture which can be broken down into perception
+                    modules, SLAM modules, control modules and vehicle
+                    simulations{" "}
+                  </p>
+                  <Col md="12">
+                    <Button
+                      onClick={handleSW}
+                      className=" btn-neutral ml-1"
+                      color="link"
+                    >
+                      Learn More
+                    </Button>
+                  </Col>
+                  <Dialog
+                    style={{ justifyContent: "center" }}
+                    open={sw}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <SWTeam />
+                  </Dialog>
+                </CardBody>
+                <CardFooter className="text-center"></CardFooter>
+              </Card>
+            </Col>
+            <Col md="3">
+              <Card
+                className="card-profile card-plain"
+                style={{ padding: 0, margin: 0 }}
+              >
+                <div>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <img alt="..." src={require("assets/img/electrical.jpg")} />
+                  </a>
+                </div>
+                <CardBody>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <div className="author">
+                      <CardTitle tag="h4">Electrical Team</CardTitle>
+                    </div>
+                  </a>
+                  <p className="card-description text-center">
+                    Responsible for electrical & electronics aspects of the
+                    vehicle like power management, safety, PCB design,
+                    fabrication, wiring and electric kit design
+                  </p>
+                  <Col md="12">
+                    <Button
+                      onClick={handleElec}
+                      className=" btn-neutral ml-1"
+                      color="link"
+                    >
+                      Learn More
+                    </Button>
+                  </Col>
+                  <Dialog
+                    open={elec}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <ElecTeam />
+                  </Dialog>
+                </CardBody>
+                <CardFooter className="text-center"></CardFooter>
+              </Card>
+            </Col>
+            <Col md="3">
+              <Card
+                className="card-profile card-plain"
+                style={{ padding: 0, margin: 0 }}
+              >
+                <div>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <img alt="..." src={require("assets/img/mechanical.jpg")} />
+                  </a>
+                </div>
+                <CardBody>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <div className="author">
+                      <CardTitle tag="h4">Mechanical Team</CardTitle>
+                    </div>
+                  </a>
+                  <p className="card-description text-center">
+                    Responsible for vehicle frame design, electronics sealing,
+                    vehicle manufacturing, assembly and fluid dynamic analysis
+                  </p>
+                  <Col md="12">
+                    <Button
+                      onClick={handleMecha}
+                      className=" btn-neutral ml-1"
+                      color="link"
+                    >
+                      Learn More
+                    </Button>
+                  </Col>
+                  <Dialog
+                    open={mecha}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <MechaTeam />
+                  </Dialog>
+                </CardBody>
+                <CardFooter className="text-center"></CardFooter>
+              </Card>
+            </Col>
 
-                                </CardFooter>
-                            </Card>
-                        </Col>
-                        <Col md="3">
-                            <Card className="card-profile card-plain" style={{ padding: 0, margin: 0 }}>
-                                <div >
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <img
-                                            alt="..."
-                                            src={require("assets/img/mechanical.jpg")}
-                                        />
-                                    </a>
-                                </div>
-                                <CardBody>
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <div className="author">
-                                            <CardTitle tag="h4">Mechanical Team</CardTitle>
-                                        </div>
-                                    </a>
-                                    <p className="card-description text-center">
-                                        We're responsible for vehicle frame design, electronics sealing, vehicle manufacturing, assembly and fluid dynamic analysis
-                    </p>
-                                </CardBody>
-                                <CardFooter className="text-center">
-
-                                </CardFooter>
-                            </Card>
-                        </Col>
-
-                        <Col md="3">
-                            <Card className="card-profile card-plain" style={{ padding: 0, margin: 0 }}>
-                                <div >
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <img
-                                            alt="..."
-                                            src={require("assets/img/business.jpg")}
-                                        />
-                                    </a>
-                                </div>
-                                <CardBody>
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <div className="author">
-                                            <CardTitle tag="h4">Business Team</CardTitle>
-                                        </div>
-                                    </a>
-                                    <p className="card-description text-center">
-                                        We're responsible for the managerial aspects of the team like finances, sponsors, media, IT and supply chain activities
-                    </p>
-                                </CardBody>
-                                <CardFooter className="text-center">
-
-
-                                </CardFooter>
-                            </Card>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="3">
-                            <Button
-                                className=" btn-neutral ml-1"
-                                color="link"
-                                href="#pablo"
-                                id="toggler4">
-                                Learn More
-                                    </Button>
-                        </Col>
-                        <Col md="3">
-                            <Button
-                                className=" btn-neutral ml-1"
-                                color="link"
-                                href="#pablo"
-                                id="toggler3">
-                                Learn More
-                                    </Button>
-                        </Col>
-                        <Col md="3">
-                            <Button
-                                className=" btn-neutral ml-1"
-                                color="link"
-                                href="#pablo"
-                                id="toggler2">
-                                Learn More
-                                    </Button>
-                        </Col>
-                        <Col md="3">
-
-                            <Button
-                                className=" btn-neutral ml-1"
-                                color="link"
-                                href="#pablo"
-                                id="toggler"                   >
-                                Learn More
-                                    </Button>
-                        </Col>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                    </Row>
-
-                    <UncontrolledCollapse toggler="#toggler" >
-
-
-                        <Col className="ml-auto mr-auto" >
-                            <h2 className="title" >Business Team</h2>
-                        </Col>
-                        <Col className="ml-auto mr-auto" md="3">
-                            <Card inverse className="card-avatar">
-                                <CardImg src={require("assets/img/team/Business/Amr.webp")} alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle style={{ fontSize: "20px" }}>Amr Mohamed</CardTitle>
-                                    <CardSubtitle>Business Team Leader</CardSubtitle>
-                                    <CardText>4th Year Mechatronics Engineering Student</CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col className="ml-auto mr-auto" md="6">
-
-                            <CardGroup >
-
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Business/sarah.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Sarah Walid</CardTitle>
-                                        <CardSubtitle>IT Member</CardSubtitle>
-                                        <CardText>4th Year Mechatronics Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Business/Muhammed.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Muhammed Ghazaly</CardTitle>
-                                        <CardSubtitle>Media and Marketing Member</CardSubtitle>
-                                        <CardText>2nd Year Mechatronics Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                            </CardGroup>
-                        </Col>
-                    </UncontrolledCollapse>
-
-                    <UncontrolledCollapse toggler="#toggler2" >
-
-
-                        <Col className="ml-auto mr-auto" >
-                            <h2 className="title" >Mechanical Team</h2>
-                        </Col>
-                        <Col className="ml-auto mr-auto" md="3">
-                            <Card inverse className="card-avatar">
-                                <CardImg src={require("assets/img/team/Mechanical/Ibrahim.webp")} alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle style={{ fontSize: "20px" }}>Ibrahim Hany</CardTitle>
-                                    <CardSubtitle>Mechanical Team Leader</CardSubtitle>
-                                    <CardText>4th Year Mechatronics Engineering Student</CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-
-                            <CardGroup >
-
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Mechanical/Mohamed.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Mohamed Raafat</CardTitle>
-                                        <CardSubtitle>Mechanical Team Member</CardSubtitle>
-                                        <CardText>4th Year Mechatronics Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Mechanical/Reem.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Reem Khaled</CardTitle>
-                                        <CardSubtitle>Mechanical Team Member</CardSubtitle>
-                                        <CardText>2nd Year Mechanical Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Mechanical/Noura.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Noura Soliman</CardTitle>
-                                        <CardSubtitle>Mechanical Team Member</CardSubtitle>
-                                        <CardText>2nd Year Mechanical Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Mechanical/Mohamed2.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "16px" }}>Mohamed Mahmoud</CardTitle>
-                                        <CardSubtitle>Mechanical Team Member</CardSubtitle>
-                                        <CardText>2nd Year Mechanical Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Mechanical/Ahmed.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Ahmed Ashraf</CardTitle>
-                                        <CardSubtitle>Mechanical Team Member</CardSubtitle>
-                                        <CardText>2nd Year Mechanical Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                            </CardGroup>
-                        
-                    </UncontrolledCollapse>
-
-                    
-                    <UncontrolledCollapse toggler="#toggler3" >
-
-
-                        <Col className="ml-auto mr-auto" >
-                            <h2 className="title" >Electrical Team</h2>
-                        </Col>
-                        <Col className="ml-auto mr-auto" md="3">
-                            <Card inverse className="card-avatar">
-                                <CardImg src={require("assets/img/team/Electrical/Zeyad.webp")} alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle style={{ fontSize: "20px" }}>Zeyad Mohamed</CardTitle>
-                                    <CardSubtitle>Electrical Team Leader</CardSubtitle>
-                                    <CardText>4th Year Mechatronics Engineering Student</CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col className="ml-auto mr-auto" md="6">
-
-                            <CardGroup >
-
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Electrical/Adel.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Adel Hamed</CardTitle>
-                                        <CardSubtitle>Electrical Team Member</CardSubtitle>
-                                        <CardText>4th Year Mechatronics Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Electrical/Zeyad2.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Zeyad Hossam</CardTitle>
-                                        <CardSubtitle>Electrical Team Member</CardSubtitle>
-                                        <CardText>3rd Year Communications Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                            </CardGroup>
-                        </Col>
-                    </UncontrolledCollapse>
-                    
-                    <UncontrolledCollapse toggler="#toggler4" >
-
-
-                        <Col className="ml-auto mr-auto" >
-                            <h2 className="title" >Software Team</h2>
-                        </Col>
-                        <Col className="ml-auto mr-auto" md="3">
-                            <Card inverse className="card-avatar">
-                                <CardImg src={require("assets/img/team/Software/gabry.webp")} alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle style={{ fontSize: "20px" }}>Ahmed Gabry</CardTitle>
-                                    <CardSubtitle>Software Team Leader</CardSubtitle>
-                                    <CardText>4th Year Software Engineering Student</CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-
-                            <CardGroup >
-
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/Yasmine.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Yasmine Aly</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/AhmedNasr.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Ahmed Nasr</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/SalmaAlaa.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Salma Alaa</CardTitle>
-                                        <CardSubtitle>SoftwareTeam Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/AbdelrahmanBishr.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Abdelrahman Bishr</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/SalmaDiaa.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Salma Diaa</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/HabibaMohamed.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Habiba Mahmoud</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                </CardGroup>
-                                <CardGroup>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/SarahWalid.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Sarah Walid</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/YasminElnaggar.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Yasmin Elnagar</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/AbdelrahmanWael.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Abdelrahman Wael</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/AhmedKhaled.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Ahmed Khaled</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/HabibaMohamed.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Lamees Kamal</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-                                <Card className="card-avatar">
-                                    <CardImg src={require("assets/img/team/Software/HabibaMohamed.webp")} alt="Card image cap" />
-                                    <CardBody>
-                                        <CardTitle style={{ fontSize: "20px" }}>Yara Yasser</CardTitle>
-                                        <CardSubtitle>Software Team Member</CardSubtitle>
-                                        <CardText>4th Year Software Engineering Student</CardText>
-                                    </CardBody>
-                                </Card>
-
-                                
-
-                            </CardGroup>
-                        
-                    </UncontrolledCollapse>
-
-                    
-                </Container>
-            </div>
-        </>
-    );
+            <Col md="3">
+              <Card
+                className="card-profile card-plain"
+                style={{ padding: 0, margin: 0 }}
+              >
+                <div>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <img alt="..." src={require("assets/img/business.jpg")} />
+                  </a>
+                </div>
+                <CardBody>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <div className="author">
+                      <CardTitle tag="h4">Business Team</CardTitle>
+                    </div>
+                  </a>
+                  <p className="card-description text-center">
+                    Responsible for the managerial aspects of the team like
+                    finances, sponsors, media, IT and supply chain activities
+                  </p>
+                  <Col md="12">
+                    <Button
+                      onClick={handleBus}
+                      className=" btn-neutral ml-1"
+                      color="link"
+                    >
+                      Learn More
+                    </Button>
+                  </Col>
+                  <Dialog
+                    open={bus}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <BusinessTeam />
+                  </Dialog>
+                </CardBody>
+                <CardFooter className="text-center"></CardFooter>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
+  );
 }
 
 export default TeamsSection;

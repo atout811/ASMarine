@@ -1,4 +1,3 @@
-
 import React from "react";
 
 // reactstrap components
@@ -27,8 +26,8 @@ function LandingPageHeader() {
     <>
       <div
         style={{
-          backgroundImage:
-            "url(" + require("assets/img/header.jpg") + ")",
+          backgroundImage: "url(" + require("assets/img/header.jpg") + ")",
+          width: "100vw",
         }}
         className="page-header"
         data-parallax={true}
@@ -41,7 +40,7 @@ function LandingPageHeader() {
             <h3>Creativity, Innovation, and Autonomy</h3>
             <br />
             <Button
-              href="https://www.youtube.com/watch?time_continue=1&v=yYf4bfQeF5g"
+              href="https://www.youtube.com/watch?v=oDKHtluYtYQ"
               className="btn-round mr-1"
               color="neutral"
               target="_blank"
@@ -50,7 +49,30 @@ function LandingPageHeader() {
               <i className="fa fa-play" />
               Watch video
             </Button>
+            <section style={{ margin: "50px" }}>
+              <h3
+                style={{
+                  marginRight: "20px",
 
+                  display: "inline",
+                  fontSize: "2.3em",
+                }}
+              >
+                Intersted ?
+              </h3>
+              <Button
+                href="/learn-more"
+                className="btn-round mr-1"
+                color="neutral"
+                target="_blank"
+                outline
+                style={{
+                  marginBottom: "10px",
+                }}
+              >
+                Clcik Here
+              </Button>
+            </section>
           </div>
         </Container>
       </div>

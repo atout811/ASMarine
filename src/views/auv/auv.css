@@ -1,0 +1,171 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview {
+  min-height: fit-content;
+  height: fit-content;
+  color: white;
+  background-color: rgb(10, 99, 182);
+  padding-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-txt {
+  font-size: x-large;
+  margin: 50px;
+  width: 50%;
+  font-weight: 400;
+}
+
+/* mechanical section  */
+
+.mechanical {
+  min-height: 500px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.model {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+.modeltxt {
+  font-size: large;
+}
+.mecha {
+  display: flex;
+  justify-content: center;
+}
+
+.mechatxt {
+  margin: 50px;
+  font-size: large;
+  margin: 50px;
+  width: 50%;
+  font-weight: 500;
+  padding: 30px;
+}
+
+.aspects {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+}
+.auv {
+  height: 350px;
+  width: 350px;
+  border-radius: 20%;
+}
+
+.aspectstxt {
+  font-weight: bold;
+}
+
+.specs {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.countup {
+  font-size: 5em;
+}
+
+/* Electrical section */
+.electrical {
+  min-height: 500px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(10, 99, 182);
+  color: white;
+}
+.wrapperelec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: auto; */
+}
+.specselec {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    margin: 15px;
+  }
+  .overview {
+    height: fit-content;
+    color: white;
+    background-color: rgb(10, 99, 182);
+    padding-top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .mecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .model {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+  }
+  .aspects {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-between;
+  }
+  .specs {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+  }
+  .specselec {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+  }
+  .mechatxt {
+    margin: 50px;
+    font-size: large;
+    margin: 50px;
+    width: 90%;
+    font-weight: 500;
+    padding: 30px;
+  }
+  .overview-txt {
+    font-size: x-large;
+    margin: 50px;
+    width: 90%;
+    font-weight: 400;
+  }
+}

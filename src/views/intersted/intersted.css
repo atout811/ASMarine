@@ -1,0 +1,105 @@
+.soso {
+  display: flex;
+  flex-direction: column;
+  /* : center; */
+}
+
+.click:hover {
+  cursor: pointer;
+  background-color: rgb(8, 85, 156);
+  border-radius: 5px;
+}
+.list {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rookie {
+  min-height: 500px;
+  height: fit-content;
+  color: white;
+  background-color: rgb(10, 99, 182);
+  padding-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.donation {
+  height: 200px;
+  padding: "15px";
+  color: white;
+  background-color: rgb(10, 99, 182);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contribute {
+  height: 200px;
+  padding: "15px";
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+
+.join {
+  height: 350px;
+  padding: "15px";
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+
+.lists {
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+}
+p {
+  margin: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    margin: 15px;
+  }
+  .rookie {
+    height: fit-content;
+    color: white;
+    background-color: rgb(10, 99, 182);
+    padding-top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  .donation {
+    height: 500px;
+    color: white;
+    margin: auto;
+    background-color: rgb(10, 99, 182);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contribute,
+  .join {
+    height: fit-content;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lists {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    justify-content: space-around;
+  }
+}

@@ -1,6 +1,4 @@
-
-import React from "react";
-
+import React, { useRef } from "react";
 
 // styles
 import "assets/css/bootstrap.min.css";
@@ -8,28 +6,7 @@ import "assets/scss/paper-kit.scss?v=1.2.0";
 import "assets/demo/demo.css?v=1.2.0";
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-  UncontrolledCarousel,
-} from "reactstrap";
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Container, Row, Col } from "reactstrap";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -37,7 +14,7 @@ import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionCarousel from "views/index-sections/SectionCarousel.js";
 import TeamsSection from "views/index-sections/TeamsSection.js";
-import HallOfFame from "views/index-sections/HallOfFame.js"
+import HallOfFame from "views/index-sections/HallOfFame.js";
 import Sponsors from "views/index-sections/Sponsors.js";
 import ContactUs from "views/index-sections/ContactUs.js";
 import YoutubeSection from "views/index-sections/YoutubeSection.js";
@@ -48,25 +25,32 @@ import Map from "views/index-sections/Map.js";
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    document.body.classList.add("profile-page");
-    return function cleanup() {
-      document.body.classList.remove("profile-page");
-    };
+    document.title = "ASMarine";
   });
   return (
     <>
-      <ExamplesNavbar />
-      <LandingPageHeader />
-      <div className="main">
+      <div id="top"></div>
+
+      <div style={{ width: "100vw" }}>
+        <ExamplesNavbar />
+        <LandingPageHeader />
         <div className="section text-center">
           <div id="sectionaboutus">
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto" md="8">
                   <h2 className="title">ABOUT US</h2>
-                  <h5 className=" ">
-                    ASmarine Team was founded in 2019 by a group of robotics researchers to create a research center and compete in RoboSub. The team focuses on hands-on implementation of academic knowledge presented in educational institutions to present innovative solutions for Marin Industry. ASmarine aspires to shape a Marine Industrial revolution and combine Engineering Robotics along with Marine Science to enhance the world’s economy and face the global crises that threaten the planet’s resources and Marine life.
-                </h5>
+                  <h5 style={{ textAlign: "justify" }}>
+                    ASmarine Team was founded in 2019 by a group of robotics
+                    researchers to create a research center and compete in
+                    RoboSub. The team focuses on hands-on implementation of
+                    academic knowledge presented in educational institutions to
+                    present innovative solutions for Marin Industry. ASmarine
+                    aspires to shape a Marine Industrial revolution and combine
+                    Engineering Robotics along with Marine Science to enhance
+                    the world’s economy and face the global crises that threaten
+                    the planet’s resources and Marine life.
+                  </h5>
                   <br />
                   {/*<Button
                   className="btn-round"
@@ -82,8 +66,11 @@ function LandingPage() {
               <br />
               <Row>
                 <Col className="ml-auto mr-auto" md="8">
-
                   <YoutubeSection></YoutubeSection>
+                  <span>
+                    For English Speakers : Please activate youtube subtitles by
+                    clicking CC option in play-bar
+                  </span>
                 </Col>
               </Row>
               <Row>
@@ -104,7 +91,6 @@ function LandingPage() {
                     </div>
                     <div className="description">
                       <h4 className="info-title">Project</h4>
-
                     </div>
                   </div>
                 </Col>
@@ -115,8 +101,6 @@ function LandingPage() {
                     </div>
                     <div className="description">
                       <h4 className="info-title">Members</h4>
-
-
                     </div>
                   </div>
                 </Col>
@@ -134,7 +118,6 @@ function LandingPage() {
             </Container>
           </div>
         </div>
-
 
         <div id="sectionhalloffame">
           <HallOfFame></HallOfFame>
@@ -156,9 +139,9 @@ function LandingPage() {
           <Sponsors></Sponsors>
         </div>
         <div id="sectioncontactus">
-        <ContactUs></ContactUs>
+          <ContactUs></ContactUs>
         </div>
-        <Container>
+        <Container style={{ marginBottom: "50px" }}>
           <Map></Map>
         </Container>
       </div>

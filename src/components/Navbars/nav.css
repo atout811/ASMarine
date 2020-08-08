@@ -1,0 +1,36 @@
+@media (min-width: 767px) and (min-width: 576px) {
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-sm .navbar-toggler {
+    /* display: block; */
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+
+  .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn) {
+    color: #9a9a9a !important;
+  }
+}
+
+@media (min-width: 767px) {
+  .navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+    /* flex-basis: auto; */
+  }
+}
+@media (max-width: 1199px) {
+  ul {
+    max-width: 800px;
+  }
+}
+.navbar-translate {
+  padding-right: 20px;
+}
